@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.example.demo.modelo.Automovil;
@@ -25,5 +26,7 @@ public interface IAutomovilService {
 	public Automovil encontrarPorPrecioMayorAYMarca(BigDecimal precio, String marca);
 
 	public List<Automovil> reporteListaPorPrecioMenorAYEstado(BigDecimal precio, String estado);
+    //Criterial Api Query Dinamico
+	public List<Automovil> encontrarPorNombreCriterialAndOr(String marca, String modelo, String estado);
 
 }

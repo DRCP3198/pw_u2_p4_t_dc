@@ -53,28 +53,33 @@ public class PwU2P4TDcApplication  implements CommandLineRunner{
 		Automovil auto3 = new Automovil();
 		auto3.setMarca("Chevrolet");
 		auto3.setModelo("aveo");
-		auto3.setPrecio(new BigDecimal(7500));
-		auto3.setFechaFabricación(LocalDateTime.of(2012, 6, 29, 13, 0));
+		auto3.setPrecio(new BigDecimal(19500));
+		auto3.setFechaFabricación(LocalDateTime.of(2023, 6, 29, 13, 0));
 		auto3.setEstado("nuevo");
 		//this.automovilService.agregar(auto3);
 		
-		System.out.println("QUERY");
-		Automovil a= this.automovilService.encontrarPorPrecioMayorA(new BigDecimal(46000));
-		System.out.println("Auto con valor mayor a 46000: "+a);
-		System.out.println();
-		List<Automovil> listaAutomovil = this.automovilService.reportePorPrecioMayorA(new BigDecimal(6000));
-		System.out.println("Autos con el precio mayor a 6000");
-		for (Automovil automovil : listaAutomovil) {
+//		System.out.println("QUERY");
+//		Automovil a= this.automovilService.encontrarPorPrecioMayorA(new BigDecimal(46000));
+//		System.out.println("Auto con valor mayor a 46000: "+a);
+//		System.out.println();
+//		List<Automovil> listaAutomovil = this.automovilService.reportePorPrecioMayorA(new BigDecimal(6000));
+//		System.out.println("Autos con el precio mayor a 6000");
+//		for (Automovil automovil : listaAutomovil) {
+//			System.out.println(automovil);
+//		}
+//		System.out.println();
+//		System.out.println("TypedQuery");
+//		Automovil aut = this.automovilService.encontrarPorPrecioMayorAYMarca(new BigDecimal(7400),"Chevrolet");
+//		System.out.println("Buscar Auto por marca Chervrolet con valor mayor a 7400 :"+ aut);
+//		System.out.println();
+//		List<Automovil> listaAutoTyped = this.automovilService.reporteListaPorPrecioMenorAYEstado(new BigDecimal(30000), "nuevo");
+//		for (Automovil automovil1 : listaAutoTyped) {
+//			System.out.println(automovil1);
+
+//		}
+		List<Automovil> a=this.automovilService.encontrarPorNombreCriterialAndOr("Chevrolet", "aveo","nuevo");
+	    for (Automovil automovil : a) {
 			System.out.println(automovil);
-		}
-		System.out.println();
-		System.out.println("TypedQuery");
-		Automovil aut = this.automovilService.encontrarPorPrecioMayorAYMarca(new BigDecimal(7400),"Chevrolet");
-		System.out.println("Buscar Auto por marca Chervrolet con valor mayor a 7400 :"+ aut);
-		System.out.println();
-		List<Automovil> listaAutoTyped = this.automovilService.reporteListaPorPrecioMenorAYEstado(new BigDecimal(30000), "nuevo");
-		for (Automovil automovil1 : listaAutoTyped) {
-			System.out.println(automovil1);
 		}
 	}
 

@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.example.demo.modelo.Automovil;
@@ -24,5 +25,8 @@ public interface IAutomovilRepo {
 	public Automovil buscarPorPrecioMayorAYMarca(BigDecimal precio, String marca);
 
 	public List<Automovil> buscarListaPorPrecioMenorAYEstado(BigDecimal precio, String estado);
+	//Criteria ApiQuery query dinamico
+	public List<Automovil> buscarPorNombreCriterialAndOr(String marca, String modelo, String estado);
+	
 
 }

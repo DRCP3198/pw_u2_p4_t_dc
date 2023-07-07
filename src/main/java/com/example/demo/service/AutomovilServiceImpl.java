@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.modelo.Automovil;
 import com.example.demo.repository.IAutomovilRepo;
+
+import jakarta.persistence.criteria.CriteriaBuilder;
 
 @Service
 public class AutomovilServiceImpl implements IAutomovilService{
@@ -61,6 +64,13 @@ public class AutomovilServiceImpl implements IAutomovilService{
 	public List<Automovil> reporteListaPorPrecioMenorAYEstado(BigDecimal precio, String estado) {
 		// TODO Auto-generated method stub
 		return this.automovilRepo.buscarListaPorPrecioMenorAYEstado(precio, estado);
+	}
+
+	
+	@Override
+	public List<Automovil> encontrarPorNombreCriterialAndOr(String marca, String modelo, String estado) {
+		// TODO Auto-generated method stub
+		return this.automovilRepo.buscarPorNombreCriterialAndOr(marca, modelo, estado);
 	}
 
 }
