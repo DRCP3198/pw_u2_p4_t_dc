@@ -26,7 +26,14 @@ public interface IAutomovilService {
 	public Automovil encontrarPorPrecioMayorAYMarca(BigDecimal precio, String marca);
 
 	public List<Automovil> reporteListaPorPrecioMenorAYEstado(BigDecimal precio, String estado);
-    //Criterial Api Query Dinamico
+
+	// Criterial Api Query Dinamico
 	public List<Automovil> encontrarPorNombreCriterialAndOr(String marca, String modelo, String estado);
+
+	// UPDATE
+	public int modificarFechaYEstado(LocalDateTime fecha, String modelo, String estado);
+
+	// DELETE
+	public int eliminarPorPecioYMarca(BigDecimal precio, String marca);
 
 }

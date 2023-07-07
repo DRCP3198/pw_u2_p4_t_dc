@@ -28,5 +28,11 @@ public interface IAutomovilRepo {
 	//Criteria ApiQuery query dinamico
 	public List<Automovil> buscarPorNombreCriterialAndOr(String marca, String modelo, String estado);
 	
+    //UPDATE
+	 public int actualizarFechaYEstado(LocalDateTime fecha,String modelo,String estado);
+	
+	//DELETE
+	public int borrarPorPecioYMarca(BigDecimal precio,String marca);
+	
 
 }

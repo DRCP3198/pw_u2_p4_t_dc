@@ -77,10 +77,17 @@ public class PwU2P4TDcApplication  implements CommandLineRunner{
 //			System.out.println(automovil1);
 
 //		}
-		List<Automovil> a=this.automovilService.encontrarPorNombreCriterialAndOr("Chevrolet", "aveo","nuevo");
-	    for (Automovil automovil : a) {
-			System.out.println(automovil);
-		}
+//		List<Automovil> a=this.automovilService.encontrarPorNombreCriterialAndOr("Chevrolet", "aveo","nuevo");
+//	    for (Automovil automovil : a) {
+//			System.out.println(automovil);
+//		}
+		System.out.println("ACTUALIZAR");
+	    Integer registro1=this.automovilService.modificarFechaYEstado(LocalDateTime.now(), "nuevo", "aveo");
+	    System.out.println("Se actualizaron " +registro1+ " de automoviles");
+	    System.out.println("ELIMINAR");
+	    Integer registro= this.automovilService.eliminarPorPecioYMarca(new BigDecimal(26000), "Mazda");
+	    System.out.println("Se eliminaron: " +registro +" de automovil");
+	    
 	}
 
 }

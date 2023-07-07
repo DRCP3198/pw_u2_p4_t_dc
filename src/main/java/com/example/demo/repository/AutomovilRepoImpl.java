@@ -125,4 +125,26 @@ public class AutomovilRepoImpl implements IAutomovilRepo {
 		return myTypedQuery.getResultList();
 
 	}
+
+	//Actualizar
+	@Override
+	public int actualizarFechaYEstado(LocalDateTime fecha,String modelo, String estado) {
+		// TODO Auto-generated method stub
+		//UPDATE Estudiante e SET e.nombre =:datoNombre where e.apellido=:datoApellido
+		Query myQuery = this.entityManager.createQuery("Update Automovil e set e.fechaFabricación = :datoFecha  where  e.estado=:datoEstado and e.modelo=:datoModelo");
+		myQuery.setParameter("datoFecha", fecha);
+		myQuery.setParameter("datoModelo", modelo);
+		myQuery.setParameter("datoEstado", estado);
+		return myQuery.executeUpdate();
+		
+	}
+    //Borrar
+	@Override
+	public int borrarPorPecioYMarca(BigDecimal precio, String marca) {
+		// TODO Auto-generated method stub
+		Query myQuery = this.entityManager.createQuery("DELETE from Automovil e where e.precio >= :datoPrecio and e.marca=:datoMarca");
+		myQuery.setParameter("datoPrecio", precio);
+		myQuery.setParameter("datoMarca", marca);
+		return myQuery.executeUpdate();
+	}
 }

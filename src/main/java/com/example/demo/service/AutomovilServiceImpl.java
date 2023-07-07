@@ -73,4 +73,16 @@ public class AutomovilServiceImpl implements IAutomovilService{
 		return this.automovilRepo.buscarPorNombreCriterialAndOr(marca, modelo, estado);
 	}
 
+	@Override
+	public int modificarFechaYEstado(LocalDateTime fecha, String modelo, String estado) {
+		// TODO Auto-generated method stub
+		return this.automovilRepo.actualizarFechaYEstado(fecha, modelo, estado);
+	}
+
+	@Override
+	public int eliminarPorPecioYMarca(BigDecimal precio, String marca) {
+		// TODO Auto-generated method stub
+		return this.automovilRepo.borrarPorPecioYMarca(precio, marca);
+	}
+
 }
