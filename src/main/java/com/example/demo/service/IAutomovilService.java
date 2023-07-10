@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import com.example.demo.modelo.Automovil;
+import com.example.demo.modelo.dto.AutomovilDTO;
 
 public interface IAutomovilService {
 
@@ -25,5 +26,8 @@ public interface IAutomovilService {
 	public Automovil encontrarPorPrecioMayorAYMarca(BigDecimal precio, String marca);
 
 	public List<Automovil> reporteListaPorPrecioMenorAYEstado(BigDecimal precio, String estado);
+	
+	//DTO AUTOMOVIL
+	public List<AutomovilDTO> reporteAutosRegistrado();
 
 }

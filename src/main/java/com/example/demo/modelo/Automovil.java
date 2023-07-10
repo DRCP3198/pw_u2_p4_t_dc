@@ -27,6 +27,12 @@ public class Automovil {
 	@Column(name = "auto_modelo")
 	private String modelo;
 	
+	@Column(name = "auto_numero_chasis")
+	private String numeroChasis;
+	
+	@Column(name = "auto_numero_motor")
+	private String numeroMotor;
+	
 	@Column(name = "auto_fecha_fabricación")
 	private LocalDateTime fechaFabricación;
 	
@@ -36,13 +42,16 @@ public class Automovil {
 	@Column(name = "auto_estado")
 	private String estado;
 	
+	@Column(name = "auto_cilidraje")
+	private Double cilindraje;
+	
+	@Column(name = "auto_color")
+	private String color;
+	
+	
 	
 
-	@Override
-	public String toString() {
-		return "Automovil [id=" + id + ", marca=" + marca + ", modelo=" + modelo + ", fechaFabricación="
-				+ fechaFabricación + ", precio=" + precio + ", estado=" + estado + "]";
-	}
+	
 
 	//Set y Get
 	public Integer getId() {
@@ -91,6 +100,38 @@ public class Automovil {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+	public String getNumeroChasis() {
+		return numeroChasis;
+	}
+
+	public void setNumeroChasis(String numeroChasis) {
+		this.numeroChasis = numeroChasis;
+	}
+
+	public String getNumeroMotor() {
+		return numeroMotor;
+	}
+
+	public void setNumeroMotor(String numeroMotor) {
+		this.numeroMotor = numeroMotor;
+	}
+
+	public Double getCilindraje() {
+		return cilindraje;
+	}
+
+	public void setCilindraje(Double cilindraje) {
+		this.cilindraje = cilindraje;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
 	}
 	
 	

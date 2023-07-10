@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.modelo.Automovil;
+import com.example.demo.modelo.dto.AutomovilDTO;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -65,8 +66,8 @@ public class AutomovilRepoImpl implements IAutomovilRepo {
 	@Override
 	public Automovil buscarPorPrecioMayorAYMarca(BigDecimal precio, String marca) {
 		// TODO Auto-generated method stub
-		TypedQuery<Automovil> typedQuery = this.entityManager
-				.createQuery("select a from Automovil a where a.precio > :datoPrecio and a.marca=:datoMarca", Automovil.class);
+		TypedQuery<Automovil> typedQuery = this.entityManager.createQuery(
+				"select a from Automovil a where a.precio > :datoPrecio and a.marca=:datoMarca", Automovil.class);
 		typedQuery.setParameter("datoPrecio", precio);
 		typedQuery.setParameter("datoMarca", marca);
 		return typedQuery.getSingleResult();
@@ -75,12 +76,21 @@ public class AutomovilRepoImpl implements IAutomovilRepo {
 	@Override
 	public List<Automovil> buscarListaPorPrecioMenorAYEstado(BigDecimal precio, String estado) {
 		// TODO Auto-generated method stub
-		TypedQuery<Automovil> typedQuery = this.entityManager
-				.createQuery("select a from Automovil a where a.precio < :datoPrecio and a.estado=:datoEstado", Automovil.class);
+		TypedQuery<Automovil> typedQuery = this.entityManager.createQuery(
+				"select a from Automovil a where a.precio < :datoPrecio and a.estado=:datoEstado", Automovil.class);
 		typedQuery.setParameter("datoPrecio", precio);
 		typedQuery.setParameter("datoEstado", estado);
 		return typedQuery.getResultList();
-	
+
+	}
+
+	@Override
+	public List<AutomovilDTO> buscarTodos() {
+		// TODO Auto-generated method stub
+		TypedQuery<AutomovilDTO> query = this.entityManager.createQuery(
+				"SELECT new com.example.demo.modelo.dto.AutomovilDTO (a.marca,a.modelo,a.cilindraje,a.color) from Automovil a",
+				AutomovilDTO.class);
+		return query.getResultList();
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.modelo.Automovil;
+import com.example.demo.modelo.dto.AutomovilDTO;
 import com.example.demo.repository.IAutomovilRepo;
 
 @Service
@@ -61,6 +62,12 @@ public class AutomovilServiceImpl implements IAutomovilService{
 	public List<Automovil> reporteListaPorPrecioMenorAYEstado(BigDecimal precio, String estado) {
 		// TODO Auto-generated method stub
 		return this.automovilRepo.buscarListaPorPrecioMenorAYEstado(precio, estado);
+	}
+
+	@Override
+	public List<AutomovilDTO> reporteAutosRegistrado() {
+		// TODO Auto-generated method stub
+		return this.automovilRepo.buscarTodos();
 	}
 
 }
