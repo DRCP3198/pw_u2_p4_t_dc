@@ -97,7 +97,7 @@ public class Alumno {
 	@Override
 	public String toString() {
 		return "Alumno [id=" + id + ", nombre=" + nombre + ", edad=" + edad + ", genero=" + genero
-				+ ", fechaNacimiento=" + fechaNacimiento + ", escuela=" + escuela + "]";
+				+ ", fechaNacimiento=" + fechaNacimiento + "]";
 	}
 
 	

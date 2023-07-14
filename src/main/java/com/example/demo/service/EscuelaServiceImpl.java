@@ -1,8 +1,12 @@
 package com.example.demo.service;
 
+import java.time.LocalDate;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.modelo.Alumno;
 import com.example.demo.modelo.Escuela;
 import com.example.demo.repository.IEscuelaRepo;
 
@@ -39,6 +43,36 @@ public class EscuelaServiceImpl  implements IEscuelaService{
 	public void eliminar(Integer id) {
 		// TODO Auto-generated method stub
 		this.escuelaRepo.borrar(id);
+	}
+
+	@Override
+	public List<Escuela> reportePorGenero(String genero) {
+		// TODO Auto-generated method stub
+		return this.escuelaRepo.seleccionarGenero(genero);
+	}
+
+	@Override
+	public List<Escuela> reporteEdadMayor(Integer edad) {
+		// TODO Auto-generated method stub
+		return this.escuelaRepo.seleccionarEdadMayor(edad);
+	}
+
+	@Override
+	public List<Escuela> reporteFechayGenero(LocalDate fecha, String genero) {
+		// TODO Auto-generated method stub
+		return this.escuelaRepo.seleccionarFechayGenero(fecha, genero);
+	}
+
+	@Override
+	public List<Escuela> reporteNombre(String nombre) {
+		// TODO Auto-generated method stub
+		return this.escuelaRepo.seleccionarNombre(nombre);
+	}
+
+	@Override
+	public List<Escuela> encontrar() {
+		// TODO Auto-generated method stub
+		return this.escuelaRepo.seleccionar();
 	}
 
 

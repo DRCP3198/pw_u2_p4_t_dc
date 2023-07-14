@@ -114,8 +114,7 @@ public class Escuela {
 	@Override
 	public String toString() {
 		return "Escuela [id=" + id + ", nombre=" + nombre + ", parroquia=" + parroquia + ", provincia=" + provincia
-				+ ", direccion=" + direccion + ", valorMatricula=" + valorMatricula + ", tipo=" + tipo + ", alumnos="
-				+ alumnos + "]";
+				+ ", direccion=" + direccion + ", valorMatricula=" + valorMatricula + ", tipo=" + tipo + "]";
 	}
 	
 	
